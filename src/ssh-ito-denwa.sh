@@ -1,15 +1,14 @@
 #!/bin/bash
 
-# SSH逆ポートフォワードを永続的に行う
+if [ -z "$SSH_HOST" ]; then
+  echo 'SSH_HOST を設定してください'
+  exit 1
+fi
 
-# 接続先情報
-# あらかじめSSH鍵認証の設定を ~/.ssh/config で行い、sshコマンドで接続可能な状態にしておいてください
-SSH_HOST=
-#SSH_PORT=
-
-# ポートフォワードの設定
-#   リモートポート:転送先ホスト:転送先ポート
-REV_PORT_FORWARD=28086:localhost:8084
+if [ -z "$REV_PORT_FORWARD" ]; then
+  echo 'REV_PORT_FORWARD を設定してください'
+  exit 1
+fi
 
 # ダミーを設定
 export DISPLAY=dummy:0

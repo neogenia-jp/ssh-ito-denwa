@@ -1,0 +1,16 @@
+Source: ssh-ito-denwa
+Maintainer: Wataru MAEDA <w.maeda@neogenia.co.jp>
+Version: 0.0.1
+Package: ssh-ito-denwa
+Section: base
+Priority: optional
+Architecture: all
+Essential: no
+Conflicts: 
+Replaces: 
+Provides: 
+Description: Reverse SSH Port Forwarding daemon for neorok
+Depends: openssh
+Recommends:
+Suggests: 
+

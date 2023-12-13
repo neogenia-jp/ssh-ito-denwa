@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -e	${INSTALL_DIR}/etc/ssh-ito-denwa.conf ]; then
+  cp ${INSTALL_DIR}/usr/lib/systemd/user/ssh-ito-denwa/src/config \
+	  ${INSTALL_DIR}/etc/ssh-ito-denwa.conf
+fi
+
+exit 0

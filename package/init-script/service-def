@@ -1,0 +1,13 @@
+[Unit]
+Description=Reverse SSH Port Forwarding daemon for neorok
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/lib/systemd/user/ssh-ito-denwa/src/entrypoint.sh
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+
