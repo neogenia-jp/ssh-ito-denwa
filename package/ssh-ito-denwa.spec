@@ -33,17 +33,30 @@ cp -Rp * %{INSTALL_DIR}/
 
 %files
 %defattr(-,root,root)
-/usr/lib/systemd/user/ssh-ito-denwa/*
+/usr/local/lib/ssh-ito-denwa/*
 /etc/ssh-ito-denwa.conf
-/etc/systemd/user/ssh-ito-denwa.service
+/usr/lib/systemd/system/ssh-ito-denwa.service
 
 %post
-cp /usr/lib/systemd/user/ssh-ito-denwa/src/config \
+cp /usr/lib/systemd/system/ssh-ito-denwa/src/config \
 	  /etc/ssh-ito-denwa.conf
 
-ln -sf /etc/systemd/user/ssh-ito-denwa/service-def /usr/lib/systemd/user/ssh-ito-denwa.service
+ln -sf /usr/local/lib/ssh-ito-denwa/ssh-ito-denwa.service /usr/lib/systemd/system/
+
+systemctl daemon-reload
 
 %preun
 
-rm -f /etc/systemd/user/ssh-ito-denwa.service
+systemctl stop ssh-ito-denwa || true
+systemctl disable ssh-ito-denwa || true
+
+rm /usr/lib/systemd/system/ssh-ito-denwa.service 
+
+if diff /usr/lib/systemd/system/ssh-ito-denwa/src/config /etc/ssh-ito-denwa.conf; then
+  rm -f /etc/systemd/system/multi-user.target.wants/ssh-ito-denwa.service
+else
+  mv /etc/ssh-ito-denwa.conf /etc/ssh-ito-denwa.conf.bkup
+fi
+
+systemctl daemon-reload
 

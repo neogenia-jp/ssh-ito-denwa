@@ -1,4 +1,7 @@
 #!/bin/bash
 
-exit 0
+systemctl stop ssh-ito-denwa || true
+systemctl disable ssh-ito-denwa || true
+
+#rm /etc/systemd/system/multi-user.target.wants/ssh-ito-denwa.service 
 

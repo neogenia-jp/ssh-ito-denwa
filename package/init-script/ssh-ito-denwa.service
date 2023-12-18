@@ -1,0 +1,19 @@
+# [参考リンク]
+# https://qiita.com/JhonnyBravo/items/a28074c20fa9adf02be3
+# https://enakai00.hatenablog.com/entry/20130917/1379374797
+
+[Unit]
+Description=Reverse SSH Port Forwarding daemon for neorok
+
+[Service]
+Type=simple
+User=root
+EnvironmentFile=/etc/ssh-ito-denwa.conf
+ExecStart=/usr/local/lib/ssh-ito-denwa/src/entrypoint.sh
+ExecStop=/bin/kill -WINCH ${MAINPID}
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+
