@@ -1,3 +1,4 @@
+#!/bin/bash
 # ssh-ito-denwa エントリポイント
 
 CONF_FILE=${CONF_FILE:-/etc/ssh-ito-denwa.conf}
