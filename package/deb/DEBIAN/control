@@ -10,7 +10,7 @@ Conflicts:
 Replaces: 
 Provides: 
 Description: Reverse SSH Port Forwarding daemon for neorok
-Depends: openssh
+Depends: openssh-client
 Recommends:
 Suggests: 
 
