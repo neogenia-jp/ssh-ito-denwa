@@ -22,14 +22,14 @@ sudo dpkg -r ssh-ito-denwa
 
 ### 設定
 
-`/etc/ssh-ito-denwa` に設定ファイルがあります。
+`/etc/ssh-ito-denwa.conf` に設定ファイルがあります。
 - 接続先ホスト、転送先ポートなどの設定を行ってください。
 - SSH接続設定については、この設定ファイルで行いません。
   事前に root ユーザで `~/.ssh/config` によって鍵認証の設定を完了させておく必要があります。
 
 ```sh
 # 設定ファイルを編集
-vi src/ssh-ito-denwa.sh
+sudo vi /etc/ssh-ito-denwa.conf
 ```
 
 ### サービスの制御
