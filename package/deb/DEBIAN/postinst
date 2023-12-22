@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -e ${INSTALL_DIR}/etc/ssh-ito-denwa.conf ]; then
+  cp ${INSTALL_DIR}/usr/local/lib/ssh-ito-denwa/src/config \
+	  ${INSTALL_DIR}/etc/ssh-ito-denwa.conf
+fi
+
+#ln -s ${INSTALL_DIR}/usr/lib/systemd/system/ssh-ito-denwa/ssh-ito-denwa.service /etc/systemd/system/
+
+systemctl daemon-reload

@@ -1,16 +1,29 @@
 #!/bin/bash
 
-# SSH逆ポートフォワードを永続的に行う
-
-# 接続先情報
+# 設定ファイルで以下の情報が必要
 #USER_NAME=user
 #SSH_PASS=''
-SSH_HOST=
-#SSH_PORT=
 
-# ポートフォワードの設定
-#   リモートポート:転送先ホスト:転送先ポート
-REV_PORT_FORWARD=28086:localhost:8084
+if [ -z "$SSH_HOST" ]; then
+  echo 'SSH_HOST を設定してください'
+  exit 1
+fi
+
+if [ -z "$REV_PORT_FORWARD" ]; then
+  echo 'REV_PORT_FORWARD を設定してください'
+  exit 1
+fi
+
+if [ -z "$USER_NAME" ]; then
+  echo 'USER_NAME を設定してください'
+  exit 1
+fi
+
+if [ -z "$SSH_PASS" ]; then
+  echo 'SSH_PASSを設定してください'
+  exit 1
+fi
+
 
 # 後述のSSH_ASKPASSで設定したプログラム(本ファイル自身)が返す内容
 # 参考: https://qiita.com/wadahiro/items/977e4f820b4451a2e5e0
