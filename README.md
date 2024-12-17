@@ -66,6 +66,15 @@ systemctl enable ssh-ito-denwa
 systemctl disable ssh-ito-denwa
 ```
 
+### 接続先での設定
+
+リモートポートに外部から接続する場合（ssh接続先ホストのさらに外側のホストから、フォワードさせるポートへの接続を許可したい場合）、
+`/etc/ssh/sshd_config` にて、以下の設定を有効化しておく必要があります。
+
+```
+GatewayPorts yes
+```
+
 ## パッケージビルド
 
 ```sh
