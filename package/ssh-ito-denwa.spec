@@ -1,5 +1,5 @@
 Name:      ssh-ito-denwa
-Version:   0.0.1
+Version:   0.1.0
 Release:   1
 Group:     Networking Tools
 Vendor:    Neogenia Ltd.
