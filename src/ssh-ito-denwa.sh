@@ -48,4 +48,4 @@ if [ "${#REV_FLAGS[@]}" -eq 0 ]; then
 fi
 
 # SSH接続（複数の -R を展開して渡す）
-ssh $SSH_PORT -C -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -o TCPKeepAlive=no -N "${REV_FLAGS[@]}" $SSH_HOST -g | $LOGGER 2>&1
+ssh $SSH_PORT -C -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -o TCPKeepAlive=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -N "${REV_FLAGS[@]}" $SSH_HOST -g | $LOGGER 2>&1
