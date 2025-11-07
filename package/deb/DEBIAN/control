@@ -1,6 +1,6 @@
 Source: ssh-ito-denwa
 Maintainer: Wataru MAEDA <w.maeda@neogenia.co.jp>
-Version: 0.0.1
+Version: 0.1.0
 Package: ssh-ito-denwa
 Section: base
 Priority: optional

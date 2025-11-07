@@ -5,7 +5,7 @@ SCRIPT_DIR=`dirname $0`
 SRC_DIR=$SCRIPT_DIR/../src
 
 PKG_NAME=ssh-ito-denwa
-VERSION=0.0.1
+VERSION=0.1.0
 
 INSTALL="install -D -v -p -o root -g root"
 CP="cp --preserve=mode,timestamps"

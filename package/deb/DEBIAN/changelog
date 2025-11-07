@@ -1,3 +1,9 @@
+ssh-ito-denwa (0.1.0) UNRELEASED; urgency=low
+
+  * Supports multiple port fowarding using comma separeted value 
+
+ -- Wataru Maeda <w.maeda@neogenia.co.jp>  Thu, 06 Nov 2025 13:47:48 +0900
+
 ssh-ito-denwa (0.0.1) UNRELEASED; urgency=low
 
   * Initial release.
